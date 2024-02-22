@@ -1,0 +1,167 @@
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+  <ul class="sidebar-nav" id="sidebar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="admin_dashboard">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a
+        class="nav-link collapsed"
+        data-bs-target="#user_manager-nav"
+        data-bs-toggle="collapse"
+        href="#"
+      >
+        <i class="bi bi-bar-chart"></i><span>User Manager</span
+        ><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul
+        id="user_manager-nav"
+        class="nav-content collapse"
+        data-bs-parent="#sidebar-nav"
+      >
+            <li>
+              <a href="view_users">
+                <i class="bi bi-circle"></i><span>View Users</span>
+              </a>
+            </li>
+            <a href="add_user ">
+              <i class="bi bi-circle"></i><span>Add User</span>
+            </a>
+            <a href="user_tree_viewer ">
+              <i class="bi bi-circle"></i><span>User Tree Viewer</span>
+            </a>
+          </li>
+          </ul>
+        </li>
+    <!-- End User Manager Nav -->
+
+    <li class="nav-item">
+      <a
+        class="nav-link collapsed"
+        data-bs-target="#transactions_manager-nav"
+        data-bs-toggle="collapse"
+        href="#"
+      >
+        <i class="bi bi-bar-chart"></i><span>Transactions Manager</span
+        ><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul
+        id="transactions_manager-nav"
+        class="nav-content collapse"
+        data-bs-parent="#sidebar-nav"
+      >
+            <li>
+              <a href="view_transactions">
+                <i class="bi bi-circle"></i><span>View Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+    <!-- End Transactions Manager Nav -->
+
+    <li class="nav-item">
+      <a
+        class="nav-link collapsed"
+        data-bs-target="#Balance_manager-nav"
+        data-bs-toggle="collapse"
+        href="#"
+      >
+        <i class="bi bi-bar-chart"></i><span>Wallet Manager</span
+        ><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul
+        id="Balance_manager-nav"
+        class="nav-content collapse"
+        data-bs-parent="#sidebar-nav"
+      >
+            <li>
+              <a href="add_balance">
+                <i class="bi bi-circle"></i><span>Add Balance</span>
+              </a>
+            </li>
+            <li>
+              <a href="withdraw_balance">
+                <i class="bi bi-circle"></i><span>Withdraw Balance</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+    <!-- End Wallet Manager Nav -->
+    <!-- <%=admin_data.wallet%> -->
+    <% if(admin_data.parent_id === null)
+    { %>
+      <li class="nav-item">
+        <a
+          class="nav-link collapsed"
+          data-bs-target="#Products_manager-nav"
+          data-bs-toggle="collapse"
+          href="#"
+        >
+          <i class="bi bi-bar-chart"></i><span>Add Product</span
+          ><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul
+          id="Products_manager-nav"
+          class="nav-content collapse"
+          data-bs-parent="#sidebar-nav"
+        >
+              <li>
+                <a href="add_product">
+                  <i class="bi bi-circle"></i><span>Add Product</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+      <!-- End Add Product Manager Nav -->
+      <% }
+      %>
+
+      <li class="nav-item">
+        <a
+          class="nav-link collapsed"
+          data-bs-target="#view_Products_manager-nav"
+          data-bs-toggle="collapse"
+          href="#"
+        >
+          <i class="bi bi-bar-chart"></i><span>View All Product</span
+          ><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul
+          id="view_Products_manager-nav"
+          class="nav-content collapse"
+          data-bs-parent="#sidebar-nav"
+        >
+              <li>
+                <a href="view_products">
+                  <i class="bi bi-circle"></i><span>View Products</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+      <!-- End View Products Nav -->
+
+    <li class="nav-heading">Pages</li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin_profile">
+        <i class="bi bi-person"></i>
+        <span>Profile</span>
+      </a>
+    </li>
+    <!-- End Profile Page Nav -->
+
+    <!-- <li class="nav-item">
+      <a class="nav-link collapsed" href="/contact_us">
+        <i class="bi bi-file-earmark"></i>
+        <span>Contact Us</span>
+      </a>
+    </li> -->
+    <!-- End contact us Page Nav -->
+  </ul>
+</aside>
+<!-- End Sidebar-->
