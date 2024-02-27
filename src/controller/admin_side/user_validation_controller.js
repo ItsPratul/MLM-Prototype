@@ -8,7 +8,18 @@ let {
 } = require("../../services/user_side/user_validation_service");
 
 exports.user_login = async (req, res) => {
-  res.render("user_login");
+  res.render("user_login", { message: req.flash() });
+};
+
+exports.user_logined = async (req, res) => {
+  let data = await user_logined(req, res);
+  if (data.success) {
+    req.flash("success", data.message);
+    res.redirect("user_dashboard");
+  } else {
+    req.flash("error", data.message);
+    res.redirect("/");
+  }
 };
 
 exports.add_user_get = async (req, res) => {
@@ -26,15 +37,6 @@ exports.user_signup = async (req, res) => {
   } else {
     res.redirect("add_user");
     console.log(data.message);
-  }
-};
-
-exports.user_logined = async (req, res) => {
-  let data = await user_logined(req, res);
-  if (data.success) {
-    res.redirect("user_dashboard");
-  } else {
-    res.redirect("/");
   }
 };
 
