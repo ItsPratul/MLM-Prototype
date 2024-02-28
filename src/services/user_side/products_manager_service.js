@@ -39,8 +39,8 @@ exports.add_product_post = async (req, res) => {
 
     if (product_check) {
       return {
-        success: true,
-        message: "Product Already Successfully",
+        success: false,
+        message: "Product Already Exixtsed",
       };
     } else {
       let product_data = new productModel({
@@ -161,6 +161,31 @@ exports.buy_now_post = async (req, res) => {
       return {
         success: true,
         message: "Product Bought Successfully",
+      };
+    } else {
+      return {
+        message: "Something Went Wrong",
+        success: false,
+      };
+    }
+  } catch (error) {
+    console.log("error", error);
+  }
+};
+
+exports.update_product_get = async (req, res) => {
+  try {
+    const user_id = req.user.user_id;
+    const admin_data = await userModel.findOne({ user_id: req.user.user_id });
+
+    let _id = req.query.id;
+    let product_data = await productModel.findOne({ _id: _id });
+
+    if (admin_data && product_data) {
+      return {
+        admin_data: admin_data,
+        product_data: product_data,
+        success: true,
       };
     } else {
       return {

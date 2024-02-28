@@ -4,6 +4,7 @@ exports.user_manager = async (req, res) => {
   let data = await user_manager(req, res);
   if (data.success) {
     res.render("view_users", {
+      message: req.flash(),
       admin_data: data.admin_data,
       user_data: data.user_data,
     });

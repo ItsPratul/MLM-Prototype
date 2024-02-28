@@ -37,6 +37,7 @@ app.use("/", require("./src/routes/admin_side/transaction_manager_route"));
 app.use("/", require("./src/routes/admin_side/balance_manager_route"));
 app.use("/", require("./src/routes/admin_side/products_manager_route"));
 app.use("/", require("./src/routes/admin_side/user_tree_viewer_route"));
+app.use("/", require("./src/routes/admin_side/user_profile_route"));
 
 app.use("/", require("./src/routes/admin_side/qr_code_testing_route"));
 

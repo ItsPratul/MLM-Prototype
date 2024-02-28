@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Update User</title>
+  <title>Salary Ledger</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -37,7 +37,7 @@
   ======================================================== -->
 </head>
 
-<body style="background-color: rgb(143, 214, 213);">
+<body style="background-color: rgb(227, 202, 192);">
 
   <!-- ======= Header ======= -->
   <%- include("../../utils/header")%>
@@ -49,12 +49,12 @@
 
     <div class="pagetitle">
       <%- include("../../utils/flash"); %>
-      <h1>Add User</h1>
+      <h1>Update Product</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="user_dashboard">Home</a></li>
-          <li class="breadcrumb-item">User Manager</li>
-          <li class="breadcrumb-item active">Update User</li>
+          <li class="breadcrumb-item">Products Manager</li>
+          <li class="breadcrumb-item active">Update Product</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -64,42 +64,22 @@
         <h5 class="card-title">Please Add The Following Details..</h5>
 
         <!-- Multi Columns Form -->
-        <form class="row g-3" action="user_update_post" method="post">
-            <input type="hidden" name="user_id" value="<%=user_data.user_id%>">
+        <form class="row g-3" action="update_product_post" method="post">
           <div class="col-md-6">
-            <label for="name" class="col-sm-6 col-form-label">Full Name</label>
-              <input type="text" class="form-control" name="name" id="name" value="<%=user_data.name%>">
+            <input type="hidden" name="id" value="<%=product_data._id%>">
+            <label for="product_name" class="col-sm-4 col-form-label">Product Name</label>
+              <input type="text" class="form-control" name="product_name" id="product_name" value="<%=product_data.product_name %>" required>
           </div>
           <div class="col-md-6">
-            <label for="mobile" class="col-sm-4 col-form-label">Mobile Number</label>
-            <input type="text" class="form-control" id="mobile" name="mobile" value="<%=user_data.mobile%>">
+            <label for="description" class="col-sm-4 col-form-label">Description</label>
+            <input type="text" class="form-control" id="description" name="description" value="<%=product_data.description %>" required>
           </div>
           <div class="col-md-6">
-            <label for="email" class="form-label">User Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="<%=user_data.email%>">
-          </div>
-          <div class="col-md-6">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password">
-          </div>
-          <div class="col-md-6">
-            <label for="gender" class="form-label">Gender</label>
-            <input type="text" class="form-control" id="gender" name="gender" value="<%=user_data.gender%>">
-          </div>
-          <div class="col-md-6">
-            <label for="address" class="form-label">Address</label>
-            <input type="text" class="form-control" id="address" name="address"value="<%=user_data.address%>">
-          </div>
-          <div class="col-md-6">
-            <label for="city" class="form-label">City</label>
-            <input type="text" class="form-control" id="city" name="city" value="<%=user_data.city%>">
-          </div>
-          <div class="col-md-6">
-            <label for="state" class="form-label">State</label>
-            <input type="text" class="form-control" id="state" name="state" value="<%=user_data.state%>">
+            <label for="amount" class="col-sm-4 col-form-label">Amount</label>
+            <input type="number" class="form-control" id="amount" name="amount" value="<%=product_data.price %>" required>
           </div>
           <div class="text-center">
-            <button type="submit" class="btn btn-primary">Update User</button>
+            <button type="submit" class="btn btn-primary" name="button" value="Update">Update Product</button>
             <button type="reset" class="btn btn-secondary">Reset</button>
           </div>
         </form><!-- End Multi Columns Form -->

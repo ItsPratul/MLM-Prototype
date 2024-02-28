@@ -130,7 +130,7 @@ exports.withdraw_balance_post = async (req, res) => {
     if (updated_balance) {
       return {
         success: true,
-        message: "Balance Added to Wallet Successfully",
+        message: "Balance Withdrawal From Wallet Successfully",
       };
     } else {
       return {

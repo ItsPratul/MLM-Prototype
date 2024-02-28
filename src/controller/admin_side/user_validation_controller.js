@@ -25,18 +25,23 @@ exports.user_logined = async (req, res) => {
 exports.add_user_get = async (req, res) => {
   let data = await add_user_get(req, res);
   if (data.success) {
-    res.render("add_user", { admin_data: data.admin_data });
+    res.render("add_user", {
+      admin_data: data.admin_data,
+      message: req.flash(),
+    });
   }
 };
 
 exports.user_signup = async (req, res) => {
   let data = await user_signup_save(req, res);
   if (data.success) {
+    req.flash("success", data.message);
     res.redirect("view_users");
     console.log(data.message);
   } else {
+    req.flash("error", data.message);
     res.redirect("add_user");
-    console.log(data.message);
+    // console.log(data.message);
   }
 };
 
@@ -53,6 +58,11 @@ exports.update_user_get = async (req, res) => {
 exports.update_user_post = async (req, res) => {
   let data = await update_user_post(req, res);
   if (data.success) {
+    req.flash("success", data.message);
+    res.redirect("view_users");
+    console.log(data.message);
+  } else {
+    req.flash("error", data.message);
     res.redirect("view_users");
     console.log(data.message);
   }

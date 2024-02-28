@@ -55,6 +55,7 @@
 
     <main id="main" class="main">
       <div class="pagetitle">
+        <%- include("../../utils/flash"); %>
         <h1>View All Available Products</h1>
         <nav>
           <ol class="breadcrumb">
@@ -92,7 +93,7 @@
                       <%id=dataobj._id.toString();%>
                       <td>
                         <% if(admin_data.parent_id === null) { %>
-                        <form action="update_product_post" method="post">
+                        <form action="update_product" method="get">
                           <input type="hidden" name="id" value="<%=id%>" />
                           <button
                             type="submit"
@@ -102,6 +103,9 @@
                           >
                             Update
                           </button>
+                        </form>
+                        <form action="update_product_post" method="post">
+                          <input type="hidden" name="id" value="<%=id%>" />
                           <button
                             type="submit"
                             class="block-button"
