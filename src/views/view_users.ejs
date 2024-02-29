@@ -260,52 +260,57 @@
           <div class="card">
             <div class="card-body">
               <h1 class="card-title">User Manager</h1>
-              <!-- Table with stripped rows -->
-              <table class="table datatable">
-                <thead>
-                  <tr>
-                    <th scope="col">S No.</th>
-                    <th scope="col">User Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Mobile</th>
-                    <th scope="col">Id</th>
-                    <th scope="col">Wallet</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Update</th>
-                  </tr>
-                </thead>
-                
-                <tbody>
-                  <%let i=1; %>
-                  <% for (let dataobj of user_data){
-                   %>
-                  <tr>
-                    <th scope="row"><%=i%></th>
-                    <td><%=dataobj.name%></td>
-                    <td><%=dataobj.email%></td>
-                    <td><%=dataobj.mobile%></td>
-                    <td><%=dataobj.user_id%></td>
-                    <td><%=dataobj.wallet%></td>
-                    <td><%=dataobj.gender%></td>
-                    
-                    <td>
-                      
-                      <button class="button update-button">
-                        <a href="update_user?user_id=<%=dataobj.user_id%>" style="text-decoration: none; color: white;">Update</a>
-                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                          <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
-                        </svg>
-                      </button>
-                    </td>
-
-                  </tr>
-                <%
-                i=i+1;
               
-              }%>
-                </tbody>
-              </table>
-              <!-- End Table with stripped rows -->
+              <!-- Make the table responsive for horizontal scrolling -->
+              <div class="table-responsive">
+                <table class="table datatable">
+                  <thead>
+                    <tr>
+                      <th scope="col">S No.</th>
+                      <th scope="col">User Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Mobile</th>
+                      <th scope="col">Id</th>
+                      <th scope="col">Wallet</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Update</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+                    <%let i=1; %>
+                    <% for (let dataobj of user_data){
+                     %>
+                    <tr>
+                      <th scope="row"><%=i%></th>
+                      <td><%=dataobj.name%></td>
+                      <td><%=dataobj.email%></td>
+                      <td><%=dataobj.mobile%></td>
+                      <td><%=dataobj.user_id%></td>
+                      <td><%=dataobj.wallet%></td>
+                      <td><%=dataobj.gender%></td>
+                      
+                      <td>
+                        
+                        <button class="button update-button">
+                          <a href="update_user?user_id=<%=dataobj.user_id%>" style="text-decoration: none; color: white;">Update</a>
+                          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+                          </svg>
+                        </button>
+                      </td>
+  
+                    </tr>
+                  <%
+                  i=i+1;
+                
+                }%>
+                  </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+              </div>
+              <!-- Table with stripped rows -->
+              
 
             </div>
           </div>

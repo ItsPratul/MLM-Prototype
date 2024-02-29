@@ -36,9 +36,12 @@
         </a>
       </li>
       <!-- End Search Icon-->
-      <li>
-        <h3><b>Your Balance = <%=admin_data.wallet%></b></h3>
+      <li class="d-none d-lg-block">
+        <h3 class="text-nowrap text-truncate">
+          <b>Your Balance = <%=admin_data.wallet%></b>
+        </h3>
       </li>
+      <!-- Responsive Your Balance -->
       <li class="nav-item dropdown">
         <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
           <i class="bi bi-bell"></i>

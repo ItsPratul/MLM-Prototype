@@ -51,6 +51,7 @@ exports.update_user_get = async (req, res) => {
     res.render("update_user", {
       admin_data: data.admin_data,
       user_data: data.user_data,
+      message: req.flash(),
     });
   }
 };
